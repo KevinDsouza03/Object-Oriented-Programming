@@ -54,6 +54,6 @@ public class UnitTestRunner {
 			Class_Info.get(i).setAverage(test.calculateGrade(Map.get((Class_Info.get(i).getLastName() + Class_Info.get(i).getFirstName()).toLowerCase())));
 			System.out.println("Student Name: " + Class_Info.get(i).getFirstName() +  " " + Class_Info.get(i).getLastName() + " | Average: " + Class_Info.get(i).getAverage());
 		}
-		test.questionsWrong(Class_Info);
+		test.questionsRight(Class_Info);
 	}
 }
