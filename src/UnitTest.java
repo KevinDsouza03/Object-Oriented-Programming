@@ -1,8 +1,6 @@
-import java.util.ArrayList;
+import java.util.ArrayList; 
 import java.util.Scanner;
-import java.util.HashMap;
 import java.io.*;
-import java.util.Collections;
 public class UnitTest {
 	//Variables
 	private Scanner input;

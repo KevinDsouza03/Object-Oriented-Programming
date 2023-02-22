@@ -49,7 +49,7 @@ public class UnitTestRunner {
 		// so for calling calcgrade: setAverage with calling calcuateGrade on each object, using the Hashmap Key to reference the answers
 		for (int i = 0; i < Class_Info.size(); i++) {
 			Class_Info.get(i).setAverage(test.calculateGrade(Map.get((Class_Info.get(i).getLastName() + Class_Info.get(i).getFirstName()).toLowerCase())));
-			System.out.println("Student Name: " + Class_Info.get(i).getFirstName() +  " " + Class_Info.get(i).getLastName() + " | Average: " + Class_Info.get(i).getAverage());
+			System.out.println(Class_Info.get(i).getFirstName() +  " " + Class_Info.get(i).getLastName() + " " + Class_Info.get(i).getAverage() + "%");
 			// This entire call is essentially:
 			// We call the respective student object " Class_Info.get(i)" , followed by calling its setAverage function
 			// Then, the double is calculated by calling the Hashmap's value for Class_Info(i)'s student
