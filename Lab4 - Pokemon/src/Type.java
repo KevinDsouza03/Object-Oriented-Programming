@@ -6,7 +6,7 @@
  */
 enum Type {
 		Bug("Bug"), Dragon("Dragon"), Electric("Electric"), 
-		Fighting("Fightning"), Fire("Fire"),
+		Fighting("Fighting"), Fire("Fire"),
 		Flying("Flying"), Ghost("Ghost"), 
 		Grass("Grass"), Ground("Ground"), Ice("Ice"), 
 		Normal("Normal"), Poison("Posion"), 
