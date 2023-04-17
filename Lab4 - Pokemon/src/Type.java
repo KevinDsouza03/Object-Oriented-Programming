@@ -18,54 +18,61 @@ enum Type {
 			this.element = label;
 		}
 		//public accessor for type
-		public String getType() {return element;}
-		//isSupereffective()
+		public Type getType() {return this;}
+		/***
+		 * is super effective against MYSELF
+		 * checks the given multipler for damage
+		 * @param this
+		 * @return multiplier/double
+		 */
 		public double isSuperEffective(Type defender) {
-			switch (this) { //asking is my move SE or NE
-			case BUG: if(defender == GRASS || defender == POISON || defender == PSYCHIC) return 1.5; 
-				if (defender == FIRE || defender == FLYING || defender == ROCK) return .5;
+			switch (defender) { //case = me; move = them.
+			case BUG: if(this == GRASS || this == POISON || this == PSYCHIC) return 2; 
+				if (this == FIRE || this == FLYING || this == ROCK) return .5;
 				return 1;
 			case DRAGON: return 1;
-			case ELECTRIC: if (defender == FLYING || defender == WATER) return 1.5;
-				if (defender == ELECTRIC || defender == GRASS || defender == PSYCHIC) return .5;
-				if (defender == GROUND) {return 0;}
+			case ELECTRIC: if (this == FLYING || this == WATER) return 2;
+				if (this == ELECTRIC || this == GRASS || this == PSYCHIC) return .5;
+				if (this == GROUND) {return 0;}
 				return 1;
-			case FIGHTING: if (defender == ICE || defender == NORMAL || defender == ROCK) return 1.5;
-				if (defender == FLYING || defender == PSYCHIC) return .5;
-				if (defender == GHOST) return 0;
+			case FIGHTING: if (this == ICE || this == NORMAL || this == ROCK) return 2;
+				if (this == FLYING || this == PSYCHIC) return .5;
+				if (this == GHOST) return 0;
 				return 1;
-			case FIRE: if (defender == BUG || defender == GRASS || defender == ICE) return 1.5;
-				if (defender == ROCK || defender == WATER) return .5;
+			case FIRE: if (this == BUG || this == GRASS || this == ICE) return 2;
+				if (this == ROCK || this == WATER) return .5;
 				return 1;
-			case FLYING: if (defender == BUG || defender == FIGHTING || defender == GRASS) return 1.5;
-				if (defender == ELECTRIC || defender == ROCK) return .5;
+			case FLYING: if (this == BUG || this == FIGHTING || this == GRASS) return 2;
+				if (this == ELECTRIC || this == ROCK) return .5;
 				return 1;
-			case GHOST: if (defender == NORMAL || defender == PSYCHIC) return 0;
+			case GHOST: if (this == NORMAL || this == PSYCHIC) return 0;
 				return 1;
-			case GRASS: if (defender == GROUND || defender == ROCK || defender == WATER) return 1.5;
-				if (defender == BUG || defender == FIRE || defender == FLYING || defender == GRASS || defender == POISON) return .5;
+			case GRASS: if (this == GROUND || this == ROCK || this == WATER) return 2;
+				if (this == BUG || this == FIRE || this == FLYING || this == GRASS || this == POISON) return .5;
 				return 1;
-			case GROUND: if (defender == ELECTRIC || defender == FIRE || defender == POISON || defender == ROCK) return 1.5;
-				if(defender == GRASS) return .5;
-				if (defender == FLYING) return 0;
+			case GROUND: if (this == ELECTRIC || this == FIRE || this == POISON || this == ROCK) return 2;
+				if(this == GRASS) return .5;
+				if (this == FLYING) return 0;
 				return 1;
-			case ICE: if (defender == DRAGON || defender == FLYING || defender == GRASS || defender == GROUND) return 1.5;
-				if (defender == ICE || defender == WATER) return .5;
+			case ICE: if (this == DRAGON || this == FLYING || this == GRASS || this == GROUND) return 2;
+				if (this == ICE || this == WATER) return .5;
 				return 1;
-			case NORMAL: if (defender== GHOST) return 0;
+			case NORMAL: if (this== GHOST) return 0;
 				return 1;
-			case POISON: if(defender == BUG || defender == GRASS) return 1.5;
-				if (defender == GROUND || defender == POISON || defender == ROCK) return .5;
+			case POISON: if(this == BUG || this == GRASS) return 2;
+				if (this == GROUND || this == POISON || this == ROCK) return .5;
 				return 1;
-			case PSYCHIC: if (defender == FIGHTING || defender == POISON) return 1.5;
-				if (defender == PSYCHIC) return .5;
+			case PSYCHIC: if (this == FIGHTING || this == POISON) return 2;
+				if (this == PSYCHIC) return .5;
 				return 1;
-			case ROCK: if (defender == BUG || defender == FIRE || defender == FLYING || defender == ICE) return 1.5;
-				if (defender == FIGHTING || defender == ROCK) return .5;
+			case ROCK: if (this == BUG || this == FIRE || this == FLYING || this == ICE) return 2;
+				if (this == FIGHTING || this == ROCK) return .5;
 				return 1;
-			case WATER: if (defender == FIRE || defender == GROUND || defender == ROCK) return 1.5;
-				if (defender == GRASS || defender == ICE) return .5;
+			case WATER: if (this == FIRE || this == GROUND || this == ROCK) return 2;
+				if (this == GRASS || this == ICE) return .5;
 				return 1;
 				
 		}
+			return 1;
 	}
+}

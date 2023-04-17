@@ -27,9 +27,25 @@ public class Attack {
 	/***
 	 * Accessors
 	 */
+	/***
+	 * returns Attk name
+	 * @return
+	 */
 	public String getAttack() {return Attack; }
+	/***
+	 * returns pp cost of attack, updates in PP
+	 * @return
+	 */
 	public int getPPCost() {return ppCost;}
-	public String getType() {return type.getType();}
+	/***
+	 * returns type of attack, used for superEffective
+	 * @return
+	 */
+	public Type getType() {return type.getType();}
+	/***
+	 * gets basedmg, more for display purposes
+	 * @return
+	 */
 	public int getDamage() {return baseDamage;}
 	
 	
